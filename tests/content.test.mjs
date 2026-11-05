@@ -19,3 +19,16 @@ test("header and footer reference approved SVG identity",()=>{
   assert.match(read("src/components/header.tsx"),/\/brand\/dedusoft-logo\.svg/);
   assert.match(read("src/components/footer.tsx"),/\/brand\/dedusoft-logo-inverse\.svg/);
 });
+
+test("homepage organization schema uses verified public values",()=>{
+  const content=read("src/app/page.tsx");
+  assert.match(content,/https:\/\/schema\.org/);
+  assert.match(content,/"@type": "Organization"/);
+  assert.match(content,/sameAs: \[site\.github\]/);
+  assert.doesNotMatch(content,/streetAddress|telephone|foundingDate|aggregateRating/);
+});
+test("robots and sitemap are statically exported and site-owned",()=>{
+  assert.match(read("src/app/robots.ts"),/sitemap:/);
+  assert.match(read("src/app/robots.ts"),/force-static/);
+  assert.match(read("src/app/sitemap.ts"),/force-static/);
+});
