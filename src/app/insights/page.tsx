@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { PageIntro, Eyebrow, ContactBand } from "@/components/ui";
+export const metadata:Metadata={title:"Insights",description:"Engineering perspectives and useful notes from DeduSoft.",alternates:{canonical:"/insights/"}};
+export default function InsightsPage(){return <><PageIntro eyebrow="Notes & perspectives" title="Ideas worth examining." description="A space for practical notes on systems, product thinking, and software engineering. We publish when there's something useful and verified to share."/><section className="shell section compact-top"><div className="editorial-note"><Eyebrow>Editorial approach</Eyebrow><h2>No filler. No artificial publishing calendar.</h2><p>Our first articles are in editorial review. In the meantime, explore the thinking behind our services and product initiatives.</p><div className="button-row"><Link href="/services/" className="button-primary">Our approach ↗</Link><Link href="/products/" className="text-link">Our products ↗</Link></div></div></section><ContactBand /></>}
