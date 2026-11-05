@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { ContactBand, PageIntro, Eyebrow } from "@/components/ui";
+import { services } from "@/lib/site";
+export const metadata: Metadata = { title: "Services", description: "DeduSoft offers custom software, websites, systems analysis, and technical implementation services.", alternates: { canonical: "/services/" } };
+export default function ServicesPage() { return <><PageIntro eyebrow="What we do" title="Build what makes sense." description="From defining a need to delivering a solution, we combine careful analysis with pragmatic engineering." /><section className="shell section compact-top"><div className="service-detail-list">{services.map(s=><article className="service-detail" key={s.number}><span className="item-number">{s.number} / SERVICE</span><div><h2>{s.title}</h2><p>{s.description}</p><div className="outcome"><Eyebrow>The outcome</Eyebrow><p>{s.outcome}</p></div></div></article>)}</div></section><ContactBand title="Tell us what you're trying to solve." /></> }

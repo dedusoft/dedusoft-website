@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <section className="shell page-intro not-found"><p className="eyebrow">404 / Not found</p><h1>Not the page you were looking for.</h1><p className="lead">This address may have changed, or the page doesn't exist.</p><Link href="/" className="button-primary">Return home ↗</Link></section>}

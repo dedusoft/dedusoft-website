@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ContactBand, Eyebrow } from "@/components/ui";
+import { projects } from "@/lib/site";
+export function generateStaticParams(){return projects.map(p=>({slug:p.slug}));}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const p=projects.find(p=>p.slug===slug);return p?{title:p.name,description:p.intro,alternates:{canonical:`/work/${slug}/`}}:{title:"Not found"};}
+export default async function ProjectPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=projects.find(p=>p.slug===slug);if(!p)notFound();return <><section className="shell page-intro"><Link className="back-link" href="/work/">← Selected work</Link><Eyebrow>{p.category} / {p.status}</Eyebrow><h1>{p.name}<span className="accent">.</span></h1><p className="lead">{p.intro}</p></section><section className="shell section case-study"><div className="case-overview"><span className="item-number">PROJECT CONTEXT</span><h2>The problem worth addressing.</h2><p>{p.context}</p></div><div className="case-overview"><span className="item-number">APPROACH</span><h2>Designing with intention.</h2><p>{p.approach}</p></div><div className="case-overview"><span className="item-number">CONTRIBUTION & EVIDENCE</span><h2>What we can verify.</h2><p>{p.contribution}</p>{p.evidence&&<a className="text-link" href={p.evidence.url} target="_blank" rel="noopener noreferrer">{p.evidence.label} ↗</a>}</div></section><ContactBand /></>}
