@@ -1,3 +1,4 @@
+export const dynamic = 'force-static';
 import type { MetadataRoute } from "next";
 import { projects, site } from "@/lib/site";
 export default function sitemap():MetadataRoute.Sitemap{
