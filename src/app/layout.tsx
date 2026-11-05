@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: site.name, title: "DeduSoft", description: site.description, url: site.url, locale: "en_US" },
   robots: { index: true, follow: true },
+  icons: { icon: [{ url: "/icon.svg", type: "image/svg+xml" }] },
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#f7f6f2" };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

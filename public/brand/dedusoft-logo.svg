@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 118" role="img" aria-labelledby="title">
+<title id="title">DeduSoft</title>
+<g transform="translate(4 2)">
+<path d="M17 82 28 18h49c29 0 45 17 45 44 0 28-17 46-49 46H61l13-18c18-2 28-11 28-28 0-19-10-26-30-26H44L35 82Z" fill="#063b2d"/>
+<path d="M46 56c3-12 13-20 30-20h34v18H77c-9 0-14 3-14 8 0 5 5 6 13 6 16 0 25 7 25 19 0 14-12 25-31 25H15l9-18h46c9 0 14-2 14-7 0-4-4-6-13-6-19 0-29-8-25-25Z" fill="#a8ee15"/>
+</g>
+<text x="137" y="82" font-family="Manrope, 'DM Sans', system-ui, sans-serif" font-size="67" font-weight="760" letter-spacing="-3.6" fill="#063b2d">DeduSoft</text>
+</svg>
