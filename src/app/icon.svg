@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">DeduSoft DS monogram</title>
+<rect width="128" height="128" rx="25" fill="#063b2d"/>
+<path d="M31 82 42 34h34c25 0 39 14 39 35 0 23-15 40-40 40H68l13-16c12-2 18-10 18-24 0-14-8-20-24-20H54l-8 33Z" fill="#fff"/>
+<path d="M56 57c2-10 11-16 24-16h23v15H81c-8 0-11 2-11 6 0 4 3 5 9 5 13 0 21 7 21 17 0 13-11 22-27 22H30l7-16h35c8 0 12-2 12-6 0-4-3-5-9-5-16 0-23-7-19-22Z" fill="#a8ee15"/>
+</svg>
