@@ -1,9 +1,23 @@
 import Link from "next/link";
 import { Eyebrow, ContactBand } from "@/components/ui";
-import { projects, services } from "@/lib/site";
+import { projects, services, site } from "@/lib/site";
+
+// Only verified public organization fields; no invented legal or contact details.
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  sameAs: [site.github],
+};
 
 export default function Home() {
   return <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }}
+    />
     <section className="hero shell">
       <div className="hero-copy"><Eyebrow>Independent software & digital solutions</Eyebrow><h1>Good software starts with <em>understanding.</em></h1><p>We help teams turn operational challenges into clear plans, useful applications, and thoughtful digital experiences.</p><div className="button-row"><Link className="button-primary" href="/contact/">Discuss a project <span aria-hidden="true">↗</span></Link><Link className="text-link" href="/work/">Explore our work <span aria-hidden="true">↗</span></Link></div></div>
       <div className="hero-visual" aria-label="Illustration of a structured software delivery process" role="img">
